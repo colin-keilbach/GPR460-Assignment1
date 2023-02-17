@@ -22,6 +22,8 @@ void NetworkManager::Init()
 	assert(address != nullptr);
 	int result = listenSocket->Bind(*address);
 	assert(result == 0);
+	// instead of asserts use this for similar effect
+	// "ERROR at line" + __LINE__ + " in file " + __FILE__;
 
 	// Expose socket
 	result = listenSocket->Listen();
